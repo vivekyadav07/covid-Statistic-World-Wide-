@@ -1,1 +1,1 @@
-web:waitress-serve --port=$PORT covid.wsgi:application
+web: gunicorn covid.wsgi
