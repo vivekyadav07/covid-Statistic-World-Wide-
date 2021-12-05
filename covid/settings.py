@@ -22,10 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ['SECRET_KEY']
 
+#'nq3unassp)%w$jju+wxqdb6y_1#)9m4!3hba$m!43c4be)603511'
+
+#
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['covidstat1.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['covidstat1.herokuapp.com']
 
 
 # Application definition
