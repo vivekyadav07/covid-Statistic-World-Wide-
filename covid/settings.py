@@ -29,7 +29,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.covidtracker.tk','covidstat21.herokuapp.com']
+ALLOWED_HOSTS = ['covidtracker.tk','covidstat21.herokuapp.com']
 
 
 # Application definition
