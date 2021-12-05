@@ -1,0 +1,141 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> heje</title>
+  
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+ 
+    </head>
+
+    <style type="text/css">
+        .container{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            border-radius: 35px;
+        }
+        menu .div h1{
+                text-align:center;
+            }
+        input{
+            margin-top: 10px;
+            margin-left: 5px;
+        }
+       form{
+           margin-top: 20px;
+       }
+
+    </style>
+
+    <body style="background-color: rgb(48, 46, 44);">
+
+        <!-- As a link -->
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+            <a style="font-family:Stencil Std, fantasy ;font-style: italic" class="navbar-brand" href="#">Covid-19 WORLD-WIDE Statistics </a>
+            </div>
+        </nav>
+
+
+
+        <form method="post" class="d-flex justify-content-center" action="" >
+            {% csrf_token %}   
+            <select class="form-control" style="width: 200px" name="selectedcountry">  
+            {% for country in mylist %}
+           
+              <option> {{country}}   </option> 
+       
+         {% endfor %}
+     </select>
+     <br> 
+     <input type="submit"  class="btn btn-danger" name=""> 
+    </form>
+
+   <h2 style="margin-top:100px ;color: white; text-align :center ;font-family:'Courier New'" > {{selectedcountry}}</h2>
+
+    <div class="d-flex justify-content-center align-items-center "> 
+        
+        <div class="container" style="background-color:aliceblue ;height: 100px; width: 250px;"> 
+            <h1 style="text-align: center;">{{total}}</h1>
+            <p> <b> Total Cases</b>  </p>
+        </div>
+
+        
+        
+        <div class="container" style="background-color:aliceblue ;height: 100px; width: 250px;"> 
+            <h1 style="text-align: center;">{{recovered}}</h1>
+            <p> <b>Recovered Cases  </b></p>
+        </div>
+
+
+       
+       
+        <div class="container" style="background-color:aliceblue ;height: 100px; width: 250px;"> 
+            <h1 style="text-align: center;">{{active}}</h1>
+            <p> <b> Total Active Cases </b>  </p>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+     <div class="d-flex justify-content-center align-items-center "> 
+       
+       
+        <div class="container" style="background-color:aliceblue ;height: 100px; width: 200px;"> 
+            <h1 style="text-align: center;">{{new}}</h1>
+            <p> <b> Total New Cases  </b> </p>
+        </div>
+
+        
+       
+        <div class="container" style="background-color:crimson ;height: 100px; width: 200px;"> 
+            <h1 style="text-align: center;">{{deaths}}</h1>
+            <p> <b> Death Cases</b>  </p>
+        </div>
+
+
+
+         <div class="container" style="background-color:rgb(211, 61, 216) ;height: 100px; width: 200px;"> 
+            <h1 style="text-align: center;">{{critical}}</h1>
+            <p> <b >Critical Cases </b>  </p>
+        </div>
+        
+
+     </div>
+
+   
+
+
+<!--  
+    <p> new: {{new}}</p>
+    <p> active : {{active}} </p>
+    <p>critical : {{critical}}</p>
+    <p>recovered : {{recovered}}  </p>
+    <p>deaths : {{deaths}}</p>
+    <p>total :{{total}} </p>-->
+   <br> <br>
+   <br>
+    <h1 style="color:whitesmoke; text-align :center; font-family: Courier New;font-style: italic">WORLD-WIDE DATA OF <span style="color: crimson;">COVID-19 </span>  </h1>
+       
+    </body>
+
+    <!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div style="color: whitesmoke ;" class="footer-copyright text-center py-3"> © Developer Vivek:2021 Copyright:
+      <a href="https://www.vivekyadav.tech/" target="_blank"> www.vivekyadav.com</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+</html>
